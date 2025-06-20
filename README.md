@@ -17,6 +17,16 @@ A lightweight mock CDN server for simulating Unity Addressables loading from a r
 
 ## 🚀 Setup Instructions
 
+### 0. 📥 Install Node.js
+Download and install Node.js from the official website:<br>
+👉 https://nodejs.org/en/download
+> ⚠️ Make sure to install the LTS version unless you have a specific reason to use the latest.
+
+You can verify the installation with:
+```bash
+node -v && npm -v
+```
+
 ### 1. 📁 Clone this repository
 
 ```bash

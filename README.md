@@ -86,3 +86,6 @@ To make Unity load assets from the **Mock CDN** instead of the editor's **Asset 
 > Unity will cache remote bundles to minimize external calls, so each bundle is typically fetched only once.  
 > You can bypass this by calling `Caching.ClearCache()` explicitly **before** loading your assets.  
 > ⚠️ Only use this for testing purposes — clearing the cache at runtime is not recommended in production.
+
+## License
+- [MIT](https://choosealicense.com/licenses/mit/)

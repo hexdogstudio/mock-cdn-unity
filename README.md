@@ -47,15 +47,18 @@ RESOURCE_DIR=ServerData
 ### 4. 📦 Build Addressables in Unity
 1. In Unity, open <b>Addressables Groups</b> window.
 2. Set your group's:
-     - Build Path to `RemoteBuildPath` → something like `ServerData/StandaloneWindows64`
+     - Build Path to `RemoteBuildPath` → something like `ServerData/[BuildTarget]`
      - Load Path to:
        ```arduino
-       http://localhost:1234/StandaloneWindows64
+       http://localhost:1234/[BuildTarget]
        ```
-     - On `Linux` platfomr use the `StandaloneLinux64` folder instead
 3. Build with: `Addressables` > `Build` > `New Build` > `Default Build Script`
+4. This will produce the following directory inside your Unity project: `ServerData/StandaloneWindows64`, or similar standalone folder depending on your target build platform.
+5. Copy the `ServerData/` directory to the <b>Mock CDN's</b> `src/` directory, now the server can finally deliver your Asset Bundles.
 
-This will populate the `ServerData/` directory with your Addressables catalog and bundles.
+>[!IMPORTANT]
+> The limitation of this solution is you have to manually copy the `ServerData/` to the `src/` directory every time you made a new build, since the `RemoteBuildPath` must be a physical folder on the disk.<br>
+> Alternativelly you can provide the absolute path of your <b>Mock CDN Server</b> as the `RemoteBuildPath`, for example on linux:<br> `/home/user/servers/mock-cdn-unity/ServerData/[BuildTarget]`
 
 ### 5. ▶️ Run the mock server
 ```bash
@@ -65,3 +68,18 @@ npm start
 ```bash
 Mock CDN running on http://localhost:1234
 ```
+
+### 6. 🎮 Use Built Content in Play Mode
+
+To make Unity load assets from the **Mock CDN** instead of the editor's **Asset Database**, do the following:
+
+1. Open the **Addressables Groups** window:  
+   `Window > Asset Management > Addressables > Groups`
+2. In the top-right corner, find the `Play Mode Script` dropdown.
+3. Select: `Use Existing Build`
+   
+✅ Unity will now load remote-marked assets directly from your **Mock CDN server**, simulating how it will behave in a real build — including any simulated latency or failures.
+> [!NOTE]
+> Unity will cache remote bundles to minimize external calls, so each bundle is typically fetched only once.  
+> You can bypass this by calling `Caching.ClearCache()` explicitly **before** loading your assets.  
+> ⚠️ Only use this for testing purposes — clearing the cache at runtime is not recommended in production.

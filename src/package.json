@@ -1,0 +1,16 @@
+{
+  "name": "mock-cdn-unity",
+  "version": "1.0.0",
+  "description": "Mock Content Delivery Network for Unity to test remote Addressable Bundle delivery.",
+  "main": "mock-cdf.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mock-cdn.mjs"
+  },
+  "author": "hexdog-studio",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}

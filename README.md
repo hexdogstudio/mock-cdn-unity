@@ -35,6 +35,7 @@ FAILUR_RATE=0.2
 MIN_LATENCY=200
 MAX_LATENCY=1500
 RESOURCE_DIR=ServerData
+VERBOSE=true
 ```
 | Variable       | Description                                |
 | -------------- | ------------------------------------------ |
@@ -43,6 +44,7 @@ RESOURCE_DIR=ServerData
 | `MIN_LATENCY`  | Minimum latency in milliseconds            |
 | `MAX_LATENCY`  | Maximum latency in milliseconds            |
 | `RESOURCE_DIR` | Path to your Addressables `ServerData` dir (advisable leave it as it) |
+|`VERBOSE`| Enables detailed logs (file scanning, request info, etc.) |
 
 ### 4. 📦 Build Addressables in Unity
 1. In Unity, open <b>Addressables Groups</b> window.

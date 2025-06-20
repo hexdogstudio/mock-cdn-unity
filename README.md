@@ -85,7 +85,7 @@ npm start
 [SCEN] Searching for Asset Bundles...
 [FOUND] Asset Bundle at: ServerData/StandaloneLinux64/example.bundle
 [OK] Asset Bundle found. Starting server...
-[READY] Mock CDN running at http://localhost:1030
+[READY] Mock CDN running at http://localhost:1234
 ```
 
 ### 6. 🎮 Use Built Content in Play Mode

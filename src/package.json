@@ -12,5 +12,8 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0"
+  },
+  "repository": {
+    "url": "https://github.com/hexdogstudio/mock-cdn-unity.git"
   }
 }

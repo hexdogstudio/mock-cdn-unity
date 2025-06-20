@@ -1,11 +1,8 @@
 import { config as _config } from "dotenv";
 import express, { static as _static } from "express";
-import path, { join } from "path";
-import { fileURLToPath } from "url";
-_config();
+import fs from "node:fs";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+_config();
 
 const app = express();
 const config = {
@@ -16,8 +13,14 @@ const config = {
   resourceDir: process.env.RESOURCE_DIR,
 };
 
+try {
+  if (!fs.existsSync(config.resourceDir)) fs.mkdirSync(config.resourceDir);
+} catch (err) {
+  console.error(err);
+}
+
 app.use((req, res, next) => {
-  const delay =
+  const latency =
     Math.random() * (config.maxLetancy - config.minLatency) + config.minLatency;
   setTimeout(() => {
     console.log(`[REQ] ${req.method} ${req.url}`);
@@ -25,10 +28,10 @@ app.use((req, res, next) => {
       console.log("[RES] Simulated CDN failure");
       res.status(503).send("Simulated CDN failure");
     } else next();
-  }, delay);
+  }, latency);
 });
 
-app.use(_static(join(__dirname, config.resourceDir)));
+app.use(_static(config.resourceDir));
 app.listen(config.port, () =>
   console.log(`Mock CDN running on http://localhost:${config.port}`)
 );

@@ -20,11 +20,11 @@ A lightweight mock CDN server for simulating Unity Addressables loading from a r
 ### 1. 📁 Clone this repository
 
 ```bash
-git clone https://github.com/your-username/unity-mock-cdn.git
+git clone https://github.com/your-username/mock-cdn-unity.git
 ```
 ### 2. 📦 Enter project folder and install dependencies
 ```bash
-cd unity-mock-cdn/src/ && npm install
+cd mock-cdn-unity/src/ && npm install
 ```
 
 ### 3. 🛠️ Configure `.env`

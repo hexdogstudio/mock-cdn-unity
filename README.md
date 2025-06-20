@@ -47,8 +47,11 @@ RESOURCE_DIR=ServerData
 ### 4. 📦 Build Addressables in Unity
 1. In Unity, open <b>Addressables Groups</b> window.
 2. Set your group's:
-     - Build Path to `RemoteBuildPath` → something like `ServerData/[BuildTarget]`
-     - Load Path to:
+     - Build Path to:
+       ```arduino
+       ServerData/[BuildTarget]
+       ```
+     - Load Path to (use the same port as defined by the `.env`):
        ```arduino
        http://localhost:1234/[BuildTarget]
        ```

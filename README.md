@@ -70,8 +70,12 @@ VERBOSE=true
 npm start
 ```
 > You'll see output like:
-```bash
-Mock CDN running on http://localhost:1234
+```blame
+[INIT] Checking resource directory: ServerData
+[SCEN] Searching for Asset Bundles...
+[FOUND] Asset Bundle at: ServerData/StandaloneLinux64/example.bundle
+[OK] Asset Bundle found. Starting server...
+[READY] Mock CDN running at http://localhost:1030
 ```
 
 ### 6. 🎮 Use Built Content in Play Mode

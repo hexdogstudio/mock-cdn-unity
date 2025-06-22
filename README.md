@@ -30,7 +30,7 @@ node -v && npm -v
 ### 1. 📁 Clone this repository
 
 ```bash
-git clone https://github.com/your-username/mock-cdn-unity.git
+git clone https://github.com/hexdogstudio/mock-cdn-unity.git
 ```
 ### 2. 📦 Enter project folder and install dependencies
 ```bash

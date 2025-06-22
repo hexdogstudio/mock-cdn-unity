@@ -27,8 +27,8 @@ function warn(tag, message) {
   config.verbose && console.warn(`[${tag.toUpperCase()}] ${message}`);
 }
 
-function error(tag, message, err = undefined) {
-  config.verbose && console.error(`[${tag.toUpperCase()}] ${message}`, err);
+function error(tag, message) {
+  config.verbose && console.error(`[${tag.toUpperCase()}] ${message}`);
 }
 
 function containsBundleFiles(dir) {
@@ -63,7 +63,7 @@ try {
 
   log("ok", "Asset Bundle found. Starting server...");
 } catch (err) {
-  error("exception", "Error during startup:\n", err);
+  error("exception", `Error during startup:\n${err}`);
   process.exit(1);
 }
 
